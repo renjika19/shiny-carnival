@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JSON</title>
+    </head>
+    <body>
+        <h2>Create Object from JSON String</h2>
+
+        <p id="demo"></p>
+        <p id="demo2" ></p>
+
+        <script>
+            var txt = '{"name":"Ashe", "age":"18", "city":"Palley City"}';
+            //this is the syntax for JSON, know it well
+            var obj = JSON.parse(txt); //turns txt to js object
+            document.getElementById('demo').innerHTML=obj.name + ', '
+            + obj.age + ', ' + obj.city;
+            var myJSON = JSON.stringify(obj); //turns obj into JSON text
+            document.getElementById("demo2").innerHTML = myJSON;
+        </script>
+    </body>
+</html>

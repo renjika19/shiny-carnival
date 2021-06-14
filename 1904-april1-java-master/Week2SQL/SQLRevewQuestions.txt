@@ -1,0 +1,47 @@
+What is SQL
+What are the sublanguages;
+What is multiplicity
+What is cardinality
+What is a candidate key
+What is referential integrity
+What are the different constraints
+What do you call a record with a foreign key relationship that doesn’t exist
+What are the differences between WHERE vs HAVING
+what are the differences between GROUP BY and ORDER BY
+Name scalar and aggregate functions
+What does LIKE do?
+What is the difference between IN and EXISTS?
+How do I use sub queries?
+How does BETWEEN work?
+What is the order of operations in an SQL statement?
+What is the difference between an aggregate function and a scalar function?
+What are the different joins in SQL?
+What are the different set operations in SQL?
+Difference between union and union all
+What is the difference between joins and set operations?
+What does RANK do?
+How do I make case statements in a query.
+How can I create a alias in SQL
+What does the AS keyword do in a query?
+What are the properties of a transaction?
+What are the transaction isolation levels and what do they prevent?
+What are dirty reads, non repeatable reads, and phantom reads?
+What is normalization
+What are the requirements for different levels
+What is pl/sql
+Stored procedures vs functions
+What are cursors
+Implicit vs explicit
+What are triggers
+What is a View
+What is an 'instead of' trigger
+what are indices
+Clustered vs nonclustered indices
+What is JDBC
+What are the interfaces and classes of JDBC
+What are the different types of statements
+What is SQL Injection
+What is a DAO
+What is ETL?
+What is the purpose, how do I do ETL?
+How do I perform exception handling in PL/SQL?

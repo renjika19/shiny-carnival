@@ -1,0 +1,62 @@
+<div class="osection">
+  <h1>Directives!</h1>
+  <p>
+    A directive is a way that we can invoke Angular functionality
+    within an html file. They act as syntax that can be used in the
+    html format without breaking the front end.
+  </p>
+
+  <h3>*ngIf</h3>
+  <div class="osection">
+    <p>What does the * mean in front of ngIf?</p>
+    <input type="button" (click)=toggleTransparency() [value]=buttonText>
+    <p *ngIf="visible; else aReference" id="aReference">
+      Any directive that has an asterisk(*) means that it is a
+      'structural directive.' This means that the directive in question
+      will actually manipulate the html directly. That is, it will be
+      capable of physically deleteing or adding html on the spot for us
+    </p>
+    <ng-template #aReference>
+      <p style="color:red">Click the button above to show
+      the answer!</p>
+    </ng-template>
+  </div>
+  <h3>*ngFor</h3>
+  <div class="osection">
+    <p>Since ngFor is another directive that will change the actual
+    html directly, we need the asterisk to signify that it is a structural
+    directive</p>
+    <hr>
+    Polkaman Name<br>
+    <input type="text" [(ngModel)]=polkaman.name><br>
+    Polkaman Type<br>
+    <input type="text" [(ngModel)]=polkaman.type><br>
+    <button (click)='submitPolkaman()'>SUBMIT</button>
+    <br>
+    <table border =2px>
+      <thead>
+        <tr>
+          <th>Polkaman NAME</th>
+          <th>Polkaman TYPE</th>
+          <th>Polkaman TIME</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let p of polkamans'>
+          <td>{{p.name}}</td>
+          <td>{{p.type}}</td>
+          <td>{{p.time | date :'full'|uppercase}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="osection">
+    <h1>Attribute Directive</h1>
+    <p [ngStyle]="styleObject" (click)="changeStyle()">
+      Attribute directives are directives that are applied as attributes
+      in the elements themselves, like structural directives. However
+      thes directives do NOT aim to change the actual structure of the
+      html, but rather change the style.
+    </p>
+  </div>
+</div>

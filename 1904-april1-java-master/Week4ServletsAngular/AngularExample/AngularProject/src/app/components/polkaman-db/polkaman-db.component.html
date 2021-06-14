@@ -1,0 +1,20 @@
+<div class=osection>
+  <h1>Polkamans in Our DB:</h1>
+  <br>
+  <table border=2px>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>OWNER</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let polka of polkamans">
+        <td>{{polka.id}}</td>
+        <td>{{polka.name}}</td>
+        <td>{{polka.owner}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,118 @@
+##Container, Dependency, and IOC
+What is dependency injection and what are the advantages?
+What is meant by "application-context"?
+What is the concept of a "container"?
+How are you going to create a new instance of an ApplicationContext?
+Can you describe the lifecycle of a Spring Bean in an ApplicationContext?
+Describe dependency injection using Java configuration?
+Describe dependency injection using annotations (@component, @Autowired)?
+Describe component scanning and Stereotypes?
+What are the scopes for Spring beans? What is the default scope?
+Are beans lazily or eagerly instantiated by default? How do you alter this behavior?
+What is an initialization method and how is it declared on a Spring bean?
+What is a destroy method, how is it declared and when is it called?
+What does component-scanning do?
+What is the behavior of the annotation @Autowired with regards to field injection, constructor injection and method injection?
+What do you have to do, if you would like to inject something into a private field?
+How does the @qualifier annotation complement the use of @Autowired?
+What is a proxy object and what are the two different types of proxies Spring can create?
+What are the limitations of these proxies (per type)?
+What is the power of a proxy object and where are the disadvantages?
+What does the @Bean annotation do?
+What is the default bean id if you only use @Bean? How can you override this?
+How do @configuration annotated classes support singleton beans?
+How do you inject scalar/literal values into Spring beans?
+What is @value used for?
+
+##Aspect oriented programming
+What is the concept of AOP? Which problem does it solve? What is a cross cutting concern?
+Name three typical cross cutting concerns.
+What problems arise if you don't solve a cross cutting concern via AOP?
+What is a pointcut, a join point, an advice, an aspect, weaving?
+How does Spring solve (implement) a cross cutting concern?
+Which are the limitations of the two proxy-types?
+What visibility must Spring bean methods have to be proxied using Spring AOP?
+How many advice types does Spring support. Can you name each one?
+What are they used for?
+Which two advices can you use if you would like to try and catch exceptions?
+What do you have to do to enable the detection of the @aspect annotation?
+Give an example pointcut expression and what it would match?
+Explain pointcut expression syntax.
+What is a ProceedingJoinPoint? When is it used?
+
+##Data Management: JDBC, Transactions, JPA, Spring Data
+What is the difference between checked and unchecked exceptions?
+Is a transaction a cross cutting concern? How is it implemented by Spring?
+How are you going to define a transaction in Spring?
+What is @EnableTransactionManagement for?
+Where can the @Transactional annotation be used? What is a typical usage if you put it at class level?
+What does JPA stand for - what about ORM?
+What is the idea behind an ORM? What are benefits/disadvantages or ORM?
+Why do you need the @entity annotation. Where can it be placed?
+What do you need to do in Spring if you would like to work with JPA?
+What do you have to configure to use JPA with Spring? How does Spring Boot make this easier?
+What is the naming convention for finder methods?
+
+##Spring Boot
+What is Spring Boot?
+What are the advantages of using Spring Boot?
+Why is it "opinionated"?
+How does it work? How does it know what to configure?
+What things affect what Spring Boot sets up?
+How are properties defined? Where is Spring Boot’s default property source?
+What is the difference between an embedded container and a WAR?
+What does @EnableAutoConfiguration do?
+What about @springbootapplication?
+Does Spring Boot do component scanning? Where does it look by default?
+What is a Spring Boot starter POM? Why is it useful?
+
+##Spring MVC and the Web Layer
+MVC is an abbreviation for a design pattern. What does it stand for and what is the idea behind it?
+Do you need spring-mvc.jar in your classpath or is it part of spring-core?
+What is the DispatcherServlet and what is it used for?
+Is the DispatcherServlet instantiated via an application context?
+What is a web application context? What extra scopes does it offer?
+What is the @controller annotation used for?
+How is an incoming request mapped to a controller and mapped to a method?
+What is the difference between @RequestMapping and @GetMapping?
+What is @RequestParam used for?
+What are the differences between @RequestParam and @PathVariable?
+What are some of the parameter types for a controller method?
+What are some of the valid return types of a controller method?
+What is a View and what's the idea behind supporting different types of View?
+How is the right View chosen when it comes to the rendering phase?
+What is the default scope in the web context?
+What does a ViewResolver do?
+
+##REST
+What does REST stand for?
+What is a resource?
+What does CRUD mean?
+What are idempotent operations? Why is idempotency important?
+Is REST scalable and/or interoperable?
+Which HTTP methods does REST use?
+What does @RequestMapping do?
+Is @controller a stereotype? Is @RestController a stereotype?
+What is the difference between @controller and @RestController?
+When do you need @ResponseBody?
+What does @PathVariable do?
+What are the HTTP status return codes for a successful GET, POST, PUT or DELETE operation?
+When do you need @ResponseStatus?
+Where do you need @ResponseBody? What about @RequestBody? Try not to get these muddled up!
+If you saw example Controller code, would you understand what it is doing? Could you tell if it was annotated correctly?
+What Spring Boot starter would you use for a Spring REST application?
+How to expose a RESTful API from Java?
+How to consume a RESTful API from Angular? 
+What are the HTTP methods supported by REST?
+Mention some key characteristics of REST?
+What is the difference between PUT and POST?
+Which protocol is used by RESTful webservices?
+What are the core components of a HTTP Request?
+What are the core components of a HTTP response?
+What is URI?
+What is statelessness in RESTful web services?
+Give some HTTP Status Codes and their meanings.
+How can RESTful endpoints be tested?
+How do you create a RESTful Web Service?
+What is idempotency?
+What does statelessness mean?

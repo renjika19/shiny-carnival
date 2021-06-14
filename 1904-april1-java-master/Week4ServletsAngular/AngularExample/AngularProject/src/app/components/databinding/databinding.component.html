@@ -1,0 +1,64 @@
+<div class="osection">
+  <h1>DATABINDING</h1>
+  <p>
+    In angular, databinding is the act of passing data from the backend
+    to the view or vice versa. Note that the "view" is the part of the
+    component that displays information to the user (so in this case,
+    it is this HTML file).
+
+    There are 3 ways to perform one-way databinding. 
+    These are techniques where either the data is passed from the front to
+    the back, the back to the front, or interpolation occurs. There
+    is such a thing called two-way databinding, wher the data is
+    simultaneously passed both from the front to the back and then back
+    to the front. Note that this is a relic of AngularJS
+  </p>
+  <h3>String Interpolation</h3>
+  <p>
+    In order to perform interpolation, you need to write the item to be
+    evaluated in between double curly braces: {{<b>expression</b>}}.
+    It is essentially a block of typescript as innerHTML. It is kind of
+    like the string interpolation from JS.
+  </p>
+  <p><b>EXAMPLES</b></p>
+  <br> 2 + 5 * 9 + 3 -1 * 88 = {{2 + 5 * 9 + 3 -1 * 88}}
+  <br> The Secret Message is... {{variable}}
+  <hr>
+  <h3>Property Binding</h3>
+  <p>
+    Property binding is a "one-way binding" technique that binds 
+    from the back to the front, but this time we apply it WITHIN
+    element tags. We do this by surrounding what would be the 'attribute'
+    of the lement with square brackets [like this].
+  </p>
+  <button class ="btn btn-warning" (click)="toggleVisibility()">
+    TOGGLE
+  </button>
+  <div [hidden]=visibility>
+    <p>HERE I AM!</p>
+  </div>
+  <h3>Event Binding</h3>
+  <p>
+    Event binding is the third approach to one-way databinding
+    in which we take input, or an event from the front end and
+    transfer it to the backend (component). This is done within the
+    element's tag, again like property binding, except we put the event
+    within parenthesis (). WE will typically wrap these around actual
+    events as well. So, note that the (click) is an example of 
+    event binding.
+  </p>
+  <h3>Two-Way databinding</h3>
+  <p>
+    We can set up two way databinding, where data we input
+    is fed back to a component and can be brought back all in the
+    same action. In order to do this, we need to invoke
+    both property AND event binding, alongside the directive
+    called ngModel
+  </p>
+  <div>
+    <input type="text" [(ngModel)]="userInput">
+    <p>
+      Your input is: {{userInput}}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class=osection>
+  <h1>PokeAPI...the ripoff part 4.0/ part 7.0</h1>
+  <input [(ngModel)]="pokeId"><br>
+  <input type ="button" value=SUBMIT (click)=fetchData()><br>
+  <table border="2px">
+    <tr><th>NAME</th><td>{{pkmn.name}}</td></tr>
+    <tr><th>ID</th><td>{{pkmn.id}}</td></tr>
+    <tr><th>WEIGHT</th><td>{{pkmn.weight}}</td></tr>
+    <tr><th>SPRITE</th><td>
+      <img [src]="pkmn.sprite" (click)="changePicture()">
+    </td></tr>
+  </table>
+</div>

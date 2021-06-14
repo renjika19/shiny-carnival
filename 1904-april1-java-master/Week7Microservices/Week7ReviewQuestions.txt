@@ -1,0 +1,41 @@
+What is a webservice? 
+What is SOA?
+What is SOAP?
+What is the WSDL?
+What are the different tags in the WSDL?
+What are the different tags in the SOAP message?
+What is Jersey?
+What is Apache CXF?
+What is JAX-WS
+what is JAX_RS
+What is Postman?
+What is JAXB?
+How do you handle exceptions with SOAP?
+Main advantages of using microservices.
+Any disadvantage in using microservices.
+Dependencies of Microservices (what do we need to use).
+Annotations of Eureka and what they do.
+How to implement Registry and Discovery services.
+What exception will get thrown if you try to run the client (single microservice) before the server (eureka)?
+How to implement Gateway service.
+What happens if you don’t have a gateway? Can you have microservices without this?
+Annotations of Zuul and what they do.
+How do you make Zuul to employ discovery for the routes to services?
+How to implement Monitoring service.
+Annotations of Hystrix and what they do?
+What is Ribbon?
+How to implement the Orchestration service?
+What is Docker?
+Workflow of a Docker? How does an image reach the container?
+Explain each component in Docker containers.
+Docker commands.
+Image vs Instance.
+Some properties in a docker-compose file.
+How to make an image available in the main Docker instance.
+Some commands in a docker file.
+How do you create a docker image?
+How to implement the Messaging Service.
+How do we enhance the natural resiliency of the Microservices architecture?
+How do you configure the custom port in Spring Boot?
+How do you reload any changes in Spring Boot without having to restart it?
+How do you define your custom Repository?

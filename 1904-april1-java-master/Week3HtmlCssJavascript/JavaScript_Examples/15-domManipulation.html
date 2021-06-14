@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DOM Manipulation</title>
+    </head>
+    <body>
+        <h1>DOM Manipulation</h1>
+        <p>
+            DOM stands for Document Object Model. It is a representation
+            of all of the elements on a webpage. You can think of it as
+            a family tree that contains all of the document's html elements
+            and details regarding each element's lineage
+        </p>
+        <br>
+        <br>
+        <p>
+            There are various JavaScript functions that you can use in order
+            to affect the DOM. This is called "DOM Manipulation"
+        </p>
+        <br>
+        <br>
+        <p>
+            There are different ways to get elments:<br>
+            -id (using getElementById function in JS)<br>
+            -name (using getElmentsByName function)<br>
+            -class (using the getElementByCalss function)<br>
+            -etc (a lot of others)
+        </p>
+        <hr>
+        <h3>Example:</h3>
+        <p id = "i1">This has an id of i1!</p>
+        <script>
+            //We can use getElementByID to get the element above by it's id
+            let i1 = document.getElementById('i1'); // selects i1
+            //document is the js object that represents the html document
+            console.log(i1);
+        </script>
+        <p name="n1">This paragraph has a name of n1!</p>
+        <script>
+            //We can use getElementByName to select elements that have the specified name
+            //note that this function returns a node list of elements
+            let n1 = document.getElementsByName('n1');//selects all elem with the name 'n1'
+            console.log(n1);
+            console.log(n1[0]);
+        </script>
+        <p class="c1">This has a class of c1!</p>
+        <script>
+            //We can use getElementsByClass to get the element above by it's class
+            //note that this returns a collection of elements that are of this class
+            //can be used to select more than one element
+            let c1 = document.getElementsByClassName('c1'); //selects all tags with class 'c1'
+            console.log(c1);
+            console.log(c1[0]);
+        </script>
+        <script>
+            //now for the actual manipulation portion
+            i1.innerHTML = ".innerHTML was used to change the text within this element!";
+            i1.style.color = 'blue';
+            i1.style.backgroundColor ='yellow';
+
+            c1[0].style.color= 'red'; //note that to change based on class, you must
+            //get the item from the collection furst
+            n1[0].style.color = 'aquamarine'; //same for name
+        </script>
+        <div id ="parentDiv">This is the parent div!</div>
+        <script>
+            //note that you can also use javascript to create new elements!
+            var div1 = document.createElement("div");//creates a new div element
+            div1.innerHTML = "I am <strong>a child</strong> div (div1)";//adds inner html to child div
+            document.getElementById("parentDiv").append(div1);//add div1 as child to parentDiv
+            div1.setAttribute("id","child"); //give element withan id="child"
+            div1.setAttribute("style","color:orangered");
+            div1.parentNode.removeChild(div1);//removes div1 by accessing its parent
+        </script>
+        <h3>Events!</h3>
+        <p>
+            We can also use js functions to occur based off of events on our front end!
+        </p>
+        <br>
+        <br>
+        <p>
+            There are several events you can respond to in JavaScript. A few of these include:
+            <br>
+            <br>onclick
+            <br>onload
+            <br>onmouseover
+            <br>onkeydown
+            <br>onkeyup
+            <br>many many more...
+        </p>
+        <button id="funcButton" onclick="someFunc()">This is a Button</button>
+        <script>
+            function someFunc(){
+                let button = document.getElementById("funcButton");
+                button.setAttribute("style","background-color:red; color:lavender");
+            }
+        </script>
+        <p>
+            Alternatively, you can also use an event listener in JavaScript
+            to trigger a function during some sort of event.
+        </p>
+        <h3>Event Listener button:</h3>
+        <button id="eListen">Random Text... click me please</button>
+        <script>
+            let ebutton = document.getElementById("eListen");
+            ebutton.addEventListener("click",function(){
+                //note that 'click' in js corresponds to the 'onclick' attribute
+                ebutton.setAttribute("style", "background:aquamarine; color:violet")
+            });
+            //note that addEventListener takes two params
+            //the first is the type of event that will trigger the js fucntion
+            //the second is a callback function that actually performs
+            //whatever changes desired
+        </script>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>

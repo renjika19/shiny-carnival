@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd"
+	default-init-method="ourInit" default-destroy-method="ourDestroy">
+
+	<!-- We define our beans using a bean tag, inside the beans tag -->
+	<!-- If we don't specify the scope, the scope is singleton -->
+	<bean name="waterTower" class="beans.sources.WaterTower">
+		<!-- Inject XML primitives using the property tag -->
+		<property name="resource" value="Water"></property>
+	</bean>
+
+	<bean name="powerPlant" class="beans.sources.PowerPlant">
+		<!-- Inject XML primitives using the property tag -->
+		<property name="resource" value="Electricity"></property>
+	</bean>
+
+	<!-- Scope prototype means a new bean will be created whenever one is needed -->
+	<bean name="waterPipes" class="beans.pipes.WaterPipes"
+		scope="prototype" primary="true">
+		<!-- This is an example of Setter dependency injection ref is the name 
+			of the bean to be injected name is the name of the field on this bean -->
+		<property name="source" ref="waterTower"></property>
+	</bean>
+
+	<bean name="wires" class="beans.pipes.Wires" scope="prototype" primary="true">
+		<property name="source" ref="powerPlant"></property>
+	</bean>
+
+	<bean name="house" class="beans.residences.House"
+		scope="prototype">
+		<property name="waterPipes" ref="waterPipes"></property>
+		<property name="wires" ref="wires"></property>
+	</bean>
+
+	<!-- We'll use constructor injection for cabins and wells -->
+	<bean name="well" class="beans.sources.Well" scope="prototype">
+		<constructor-arg name="resource" value="Well Water"></constructor-arg>
+	</bean>
+
+	<bean name="solarPanel" class="beans.sources.SolarPanel" scope="prototype">
+		<constructor-arg name="resource" value="Solar Power!"></constructor-arg>
+	</bean>
+
+	<!-- We can define multiple beans from the same class -->
+	<bean name="wellWaterPipes" class="beans.pipes.WaterPipes"
+		scope="prototype">
+		<constructor-arg ref="well"></constructor-arg>
+	</bean>
+
+	<bean name="solarWires" class="beans.pipes.Wires"
+		scope="prototype">
+		<constructor-arg ref="solarPanel"></constructor-arg>
+	</bean>
+
+	<bean name="cabin" class="beans.residences.Cabin"
+		scope="prototype">
+		<constructor-arg ref="wellWaterPipes"></constructor-arg>
+		<constructor-arg ref="solarWires"></constructor-arg>
+	</bean>
+	
+	<!-- Autowiring! spring automagically determines dependencies using one of two methods:
+		By Name: uses bean definition name
+		By Type: uses name of the class in java -->
+	
+	<bean name="autoNameHouse" class="beans.residences.HouseWithAutoByName" autowire="byName"></bean>
+
+	<bean name="autoTypeHouse" class="beans.residences.HouseWithAutoByType" autowire="byType"></bean>
+	
+	<!-- Component scanning
+		This allows us to scan our java files for components and build
+		beans using annotations.  This is the main method of bean
+		configuration in Spring MVC. -->
+	<context:component-scan base-package="beans"></context:component-scan>
+
+</beans>

@@ -1,0 +1,12 @@
+<form>
+  <fieldset>
+    <legend>Create New Customer</legend>
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" [(ngModel)]="model.firstName">
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" [(ngModel)]="model.lastName">
+    <label for="email">Email</label>
+    <input type="text" name="email" [(ngModel)]="model.email">
+    <button (click)="addCustomer()">Add Customer</button>
+  </fieldset>
+</form>

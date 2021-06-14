@@ -1,0 +1,35 @@
+Project 2 Specifications
+
+Angular
+Hibernate
+Spring (no Spring Boot and Spring Data)
+Use Jenkins Pipeline
+Agile methodology (Daily Standups)
+
+
+Use at least 1 api
+
+Decide a team name
+Collectively Decide on a team lead
+Decide on a topic. Present it to me by the end of the day on Friday.
+
+
+Here are the Teams:
+
+Fred 
+Fareed
+Jagdeep
+Jason
+
+Sal
+Kyle
+Candace
+Rico
+
+Tahmid
+Viet
+Thomas
+
+Jonathan
+Michael
+David

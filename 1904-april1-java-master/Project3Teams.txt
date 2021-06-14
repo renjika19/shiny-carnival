@@ -1,0 +1,19 @@
+team 1:
+Michael <-lead
+Kyle
+Jason
+Jagdeep
+Fareed
+Thomas
+Jeremiah
+
+
+team 2:
+Jonathan <-lead
+Tahmid
+Sal
+Rico
+Candace
+David
+Fred
+Viet

@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+body{
+    background-color: beige
+}
+.osection{
+    background: burlywood;
+    color: aliceblue;
+    border-radius: 15px;
+    border: 5px outset rgb(226, 131, 43);
+    margin:10px;
+    padding:10px;
+}
+
+.osection .osection{
+    background: sandybrown;
+    color: honeydew;
+    border-radius: 15px;
+    border: 5px outset brown;
+    margin:10px;
+    padding:10px;
+}

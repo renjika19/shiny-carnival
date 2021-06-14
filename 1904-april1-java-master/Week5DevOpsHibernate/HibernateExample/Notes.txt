@@ -1,0 +1,156 @@
+Hibernate
+----------
+- Hibernate is an Object Relation Mapping (ORM) framework for Java Programming
+Language.
+- Object Relational Mapping (ORM) is a programming technique used to convert between
+incompatible type systems such as Java Objects and database tables.
+- Java consists of classes and objects, but we can't store data in objects
+permanently, so we use a relational database.
+- To access data without Hibernate: need to read data from Java Objects, need
+write a SQL insert statement. If we want to use SQL, we need to fetch data from
+a database. (Form a Result Set).
+- Hibernate uses JDBC under the hood.
+- Abstraction of JDBC
+	- We no longer have to write SQL in Java
+	- We can perform transactions on the database only using objects
+	- Hibernate methods can be used to map Java classes and fields to database
+	tables and columns.
+	- HQL can used instead of SQL
+
+-------------------
+Benefits to using Hibernate
+	- Supports persistent database accesses
+	- Provides data query and retrieval facilities
+	- Handles all low level SQL code
+	- Reduces the JDBC code for interacting with the database
+	- Can use caching to make processes faster
+	- Simplifies complex joins
+	- Automatically create tables for you
+
+-------------------
+Configure Hibernate
+	-hibernate.cfg.xml
+		- contain information such as how to connect to a database.
+		- username, location, password, type of database, driver to use
+		- optional configurations include things like ability to do DDL, show SQL
+		- <mapping> is responsible for saying which objects in your java
+		get a table in the database.
+		
+-------------------
+Interfaces of Hibernate
+
+	-Configuration (technically a class)
+		- is responsible for finding the mapping and Configuration
+		documents to create the SessionFactory.
+		- Hibernate uses this to read and parse properties required to connect
+		to a database
+		- Provides two main types of information - Database connection credentials
+		and class mapping setup.
+	
+	-SessionFactory
+		- Instance of Session Factory is created using Configuration class
+		- Used to crate a session to communicate with the database.
+		- Thread-safe, immutable cache of compiled mapping for a single database
+		
+	-Session
+		- Instance of Session is created using the SessionFactory
+		- A session is a single-thread, short-lived object representing a 
+		conversation between the application and the persistent store.
+		- Session is used to create instances of Transaction, Query, and Criteria
+	
+	-Transaction
+		- Instance of Transaction is created using the Session object.
+		- A transaction is single-threaded, short-lived object used by the
+		application to specify atomic units of work.
+	
+	-Query
+		- Object that is used to create a query that will retrieve or store
+		data into the database.
+		- Uses SQL or HQL
+	
+	-Criteria
+		- Object that is used to create a query that retrieves or stores data 
+		based on multiple conditions
+		- Object-oriented approach; doesn't use a query language
+	
+---------------
+
+Hibernate L1 vs L2 Caching
+
+	-L1 Caching
+		- Associated with the Session object
+		- Considered to be mandatory
+		- If you use multiple updates to an object, Hibernate will try to delay the actual
+		update as late as possible to reduce number of update SQL statements used.
+		
+	-L2 Caching
+		- Optional caching
+		- Associated with the SessionFactory object
+		- First level cache is always consulted before any attempt is made to locate
+		an object in L2 caching.
+		- Can be configured on a per-class basis and per-collection basis and is mainly
+		responsible for caching objects across sessions.
+		- Use a third party software to execute/implement L2 Caching. ehcache; jBoss
+		
+		
+-------------------
+
+Get vs Load
+
+	-Get
+		- When you use session.get(), you will eagerly fetch the object from the database
+		- If an object does not exist, you will receive a null value.
+	
+	-Load
+		- When you use session.load(), you are grabbing a proxy object if there are tables
+		nested within each other.
+		- You should only use load() if you are sure that an object exists.
+		- If you are trying to use load with an object that does not exist, you will get an
+		ObjectNotFound exception.
+		- It is possible to speed up efficiency with load, but you run the risk of getting
+		an exception.
+
+
+Save vs Persist
+
+	-Save
+		- When using session.save(), the transaction of a cored is finalized.
+		- When we use save, the record is immediately given a primary key and
+		inserted into the database.
+		- Upon being executed, save is guaranteed to return an assigned ID.
+		
+	-Persist
+		- Persist does not immediately assign a primary key to the record.
+		- All it can guarantee is that the primary key will be assigned before
+		the transaction is finished.
+		- This prevents deadlocking of the records between multiple users.
+		- As a result, void is the return type of persist, since we aren't sure
+		when the primary ket will be properly assigned.
+
+
+Merge vs Update
+
+	-Two objects cannot exist in a session with the same ID.
+
+	-Merge
+		-Merge can be used to update existing values; however, this method creates a copy
+		from the passed entity object and returns it.
+		-Merge will 'update' the object in the database, without question.
+		-Merge will update the original object with the new one.
+	
+	-Update
+		-Update should be used where we know that we are only updating the entity information
+		-Update adds the entity object into the persistent context and further changes
+		are tracked and saved when transaction is committed.
+		-If the object being updated already exists in the session, the object is updated.
+		-Otherwise, you get a NonUniqueObjectException.
+
+
+------------------------
+
+Review ACID Properties
+	
+	
+	
+	
+	

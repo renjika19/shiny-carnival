@@ -1,0 +1,4 @@
+<div *ngFor="let customer of customer_list">
+  <p>{{customer | json}}</p>
+</div>
+<button (click)="refreshList()">Refresh List</button>

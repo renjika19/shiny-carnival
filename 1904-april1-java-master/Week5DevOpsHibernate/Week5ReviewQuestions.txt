@@ -1,0 +1,37 @@
+What is unix?
+What is grep, yum, man?
+Explain basic Unix commands for file creation and directory navigation
+What is VIM? 
+How do I change file permissions?
+How do I create local enviroment variables and global environment variables?
+What is AWS?; Amazon Web Services, a cloud solution from Amazon offering services for infrastructure, software, and platform needs.
+What is the cloud?
+What is an EC2, AMI, IAM, RDS, EBS, S3, Route 53, VPC, ELB, auto-scaling groups?
+What is PAAS, IAAS, SAAS?
+How does AWS availability zones work?
+What are AWS endpoints?
+What are AWS regions?
+What is DevOps?
+What is continuous integration, deployment, and delivery?
+What is jenkins?
+How would you build a DevOps pipeline complete with notification and quality checking?
+What is SonarQube?
+What is agile?
+What steps are in the agile process? 
+What are the "rules"/best practices of good devops?
+What is hibernate?
+What is ORM?
+3 states of persistance
+What is a persistent class?
+What are the interfaces of hibernate?
+What are the object states of the persistent object, at what point are they triggered?
+Where is hibernate configured (xml wise?)
+How are objects mapped (xml wise?).
+What is the different between lazy loading and eager fetching? 
+What is the difference between get and load? 
+save vs persist?
+merge vs update?
+L1 caching vs l2 caching?
+What are some l2 caching providers?
+What is the difference between HQL and criteria?
+How do I perform aggregate functions using criteria?

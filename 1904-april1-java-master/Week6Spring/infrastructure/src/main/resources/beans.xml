@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- We define our beans using a bean tag, inside the beans tag -->
+	<!-- If we don't specify the scope, the scope is singleton -->
+	<bean name="waterTower" class="beans.WaterTower">
+		<!-- Inject XML primitives using the property tag -->
+		<property name="resource" value="Water"></property>
+	</bean>
+	
+	<!-- Scope prototype means a new bean will be created whenever one is needed -->
+	<bean name="waterPipes" class="beans.WaterPipes" scope="prototype">
+		<!-- This is an example of Setter dependency injection
+			ref is the name of the bean to be injected
+			name is the name of the field on this bean -->
+		<property name="source" ref="waterTower"></property>
+	</bean>
+	
+	<bean name="house" class="beans.House" scope="prototype">
+		<property name="waterPipes" ref="waterPipes"></property>
+	</bean>
+
+</beans>
